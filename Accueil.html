@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="https://i.postimg.cc/fTd7QJvj/cam_Fichier_61.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio | Camille LACHARME</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap" rel="stylesheet">
+
+        
+        
+         <script type="module" crossorigin src="vagues.js"></script>
+      
+      <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <!-- menu de navigation -->
+         <nav id="menu">
+                <ul>
+                    <li><a href="Accueil.html"><img id="logo"  src="https://i.postimg.cc/J7v3FbjY/cam_Fichier_41.png" alt="Accueil"></a></li>
+                    <li><a href="Profil.html">Experience</a></li>
+                    <li><a href="Projets.html">Projets</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+        <div id="marge"></div>
+        <header id="header_id">
+            <div id="accroche">            
+                <div id="nom">Camille LACHARME </div>
+                <div id="titre">Etudiante en première année de BUT informatique - Développement & réalisation d'applications</div>
+            </div>
+            <!--- fond three js avec les vagues -->
+            <div id="waves">
+                <canvas class="webgl"></canvas>
+            </div>
+        </header>
+           
+         <main>
+            
+            <section class="a_propos">
+                <h2>À propos</h2>
+                <article class="a_propos_txt">
+                <p class="presentation"> Bonjour et bienvenue sur mon portfolio.
+                    <br>
+                    Je m'appelle Camille Lacharme, j’ai 19 ans et je suis originaire du Haut-Beaujolais.
+                    <br>
+                   Après l’obtention de mon baccalauréat avec mention Bien en 2023, j’ai intégré l’IUT2 de Grenoble en BUT Informatique.
+                    <br><br>
+                   Au cours de cette formation, j’ai pu approfondir mes connaissances en développement informatique et découvrir de <br>
+                   nouvelles technologies, aussi bien en programmation qu’en conception de projets numériques. J’ai participé à plusieurs <br>
+                    projets en équipe, ce qui m’a permis de développer mes compétences techniques, mais aussi mes capacités  <br>
+                    d’organisation, de communication et de travail collaboratif.
+                    <br><br>
+                    À plus long terme, j’envisage de me spécialiser dans le domaine du développement web, afin de construire un <br> 
+                    parcours professionnel solide et en adéquation avec mes centres d’intérêt. Je souhaite également faire de l'alternance <br>
+                    lors de ma troisième année de BUT, puis continuer vers une insertion professionnelle ou des études complémentaires <br>
+                     selon les opportunités.
+                    <br><br>
+                    Passionnée par l’informatique et motivée par l’apprentissage continu,je suis toujours curieuse de découvrir de nouveaux <br>
+                    outils, de nouvelles méthodes et de relever de nouveaux défis techniques. Je serai très heureuse de pouvoir vous aider <br>
+                    dans vos futurs projets. Si vous souhaitez en savoir plus sur moi, mes compétences et mes différents projets, ou tout <br>
+                    simplement savoir comment me contacter, n'hésitez pas à explorer ce site et à me faire des retours.
+                    <br><br>
+                    Bonne lecture et à bientôt.
+                </p>
+                <!-- Image de presentation-->
+                <img src="phot_profil-Photoroom.png">
+                </article>
+            </section>
+        </main>
+
+        <!---footer-->
+        <footer>
+            <div id="foot_cont">
+                <p>Site développé par Camille Lacharme avec HTML et CSS.</p>
+                <p>&copy Camille Lacharme 2026</p>
+            </div>
+        </footer>
+	</body>
+
+    <!--Script pour faire fonctionner le fond avec vagues-->
+    <script type="x-shader/x-vertex" id="vertexshader">
+        
+        attribute float scale;
+
+        void main() {
+
+            vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+            gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+            gl_Position = projectionMatrix * mvPosition;
+
+        }
+    </script>
+
+    <!--Script pour faire fonctionner le fond avec vagues-->
+    <script type="x-shader/x-fragment" id="fragmentshader">
+        
+        uniform vec3 color;
+
+        void main() {
+
+            if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+            gl_FragColor = vec4( color, 1.0 );
+
+        }
+    </script>
+
+    <script type="module" crossorigin src="vagues.js"></script>
+</html>
