@@ -33,39 +33,38 @@
                 <div class="message">
                     <h2 id="cont_titre">Me contacter</h2>
                 
-                    <form >
+                   <form action="https://formspree.io/f/xzdwweqe" method="POST">
                         <div class="infos_perso">
                             <div class="nom_prenom">
-                                <label>Nom</label>
-                                <input type="text" >
+                                <label>Prénom *</label>
+                                <input type="text" name="prenom" required>
                             </div>
                             <div class="nom_prenom">
-                                <label>Prénom</label>
-                                <input type="text" >
+                                <label>Nom *</label>
+                                <input type="text" name="nom" required>
                             </div>
                         </div>
 
                         <div class="infos_perso">
                             <div class="nom_prenom">
-                                <label>Adresse mail</label>
-                                <input type="email" placeholder="example@gmail.fr" /><br />
+                                <label>Adresse mail *</label>
+                                <input type="email" name="email" placeholder="example@gmail.fr" required />
                             </div>
                             
-                             <div class="nom_prenom">
-                                <label>Téléphone</label><br />
-                                <input type="tel" placeholder="+33" name="telephone" /><br />
+                            <div class="nom_prenom">
+                                <label>Téléphone</label>
+                                <input type="tel" name="telephone" placeholder="+33" />
                             </div>    
                         </div>
                         
                         <label>Votre message</label>
-                        <textarea placeholder="Ecrivez votre texte..."></textarea>
-                    
-                    <div class="bouton" >
-                        <button class="btn_1" type="reset">Effacer</button>
-                        <button class="btn_2">Envoyer</button>
-                    </div> 
-        
-                </div>
+                        <textarea name="message" placeholder="Ecrivez votre texte..." required></textarea>
+
+                        <div class="bouton">
+                            <button class="btn_1" type="reset">Effacer</button>
+                            <button class="btn_2" type="submit">Envoyer</button>
+                        </div> 
+                    </form>
                 <br>
             </section>
 
