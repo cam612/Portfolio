@@ -297,6 +297,13 @@ b{
     
 }
 
+.link_competence{
+    text-decoration: none;
+    color: white;
+   
+    margin: 0px 10px;
+}
+
 .exp_text {
     padding-left: 15px;
     padding-right: 15px
@@ -311,6 +318,11 @@ b{
 i{
     margin-right: 20px;
     margin-bottom: 8px;
+}
+
+.link{
+    color: var(--color-secondary)!important;
+    text-decoration: underline !important;
 }
 
 .projet_box {
@@ -388,9 +400,22 @@ i{
 
 .exp_titre{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     
+}
+
+.exp_titre div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.exp_titre a:hover{
+    color: var(--color-secondary);
 }
 
 .exp_titre p{
